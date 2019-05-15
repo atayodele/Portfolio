@@ -1,0 +1,14 @@
+mkdir react-bootcamp
+npx create-react-app porfolio
+cd porfolio
+code . ==> open it on vs code
+npm run start
+
+
+const fetchData = async () => {
+	const resp = await fetch('https://api.github.com');
+	const data = await resp.json();
+	
+	console.log(data);
+};
+fetchData();

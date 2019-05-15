@@ -1,0 +1,40 @@
+import React, {Component} from 'react';
+import './bootstrap.min.css';
+class App extends Component{
+  constructor(){
+    super();
+    this.state = { displayBio: false };
+
+    this.toggleDisplateBio = this.toggleDisplateBio.bind(this);
+  }
+  // flit to true if false, vice versa
+  toggleDisplateBio(){
+    this.setState({ displayBio: !this.state.displayBio });
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Hello!</h1>
+        <p> May name is David. I'm a software engineer.</p>
+        <p>I'm always looking forward to work on meaningful projects. </p>
+        {
+        this.state.displayBio ? (
+          <div>
+              <p> I live in San Francisco, and code everyday.</p>
+              <p>My Favourite language is Javascript, and I think  React.js ia cool to learn</p>
+              <p>Besides coding I also love music and ramen</p>
+              <button onClick={this.toggleDisplateBio}>Show Less</button>
+          </div>
+          ) : (
+            <div>
+              <button onClick={this.toggleDisplateBio}>Read More</button>
+            </div>
+          )
+        }
+      </div>
+    )
+  }
+}
+
+export default App;
